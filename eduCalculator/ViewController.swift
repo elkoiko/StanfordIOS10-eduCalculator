@@ -34,7 +34,9 @@ class ViewController: UIViewController {
             }
             displayIsNull = false
         } else if !displayIsNull {
-            labelDisplay.text = labelDisplay.text! + sender.currentTitle!
+            if (labelDisplay.text!.range(of: ".") == nil && sender.currentTitle == ".") || (sender.currentTitle != ".") {
+                labelDisplay.text = labelDisplay.text! + sender.currentTitle!
+            }
         }
     }
     
